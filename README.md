@@ -11,6 +11,8 @@ Installing Plex-Now-Playing
 
 `pip install -r requirements.txt`
 
+Then open plexamp.py and add the required things like your Plex Token, the URL of your Plex Server, and the name of your Plex Client.
+
 Running Plex-Now-Playing
 
 `python plexamp.py`
