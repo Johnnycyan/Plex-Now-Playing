@@ -22,6 +22,8 @@ def save_album_art(item):
     if album_art_url:
         #print(baseurl + album_art_url)
         album_art = requests.get(baseurl + album_art_url + f'?X-Plex-Token={token}').content
+        with open (f"{mydir}album_art.txt", "w+") as f:
+            f.write(baseurl + album_art_url + f'?X-Plex-Token={token}')
         with open(f"{mydir}album.png", "wb") as f:
             f.write(album_art)
     else:
