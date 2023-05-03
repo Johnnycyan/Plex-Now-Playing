@@ -1,7 +1,7 @@
 # Plex-Now-Playing
 This is a python script that when running listens for the currently playing song and retrieves the title, artist, and album art, and saves it into the current directory (configurable)
 
-Requires Plex Media Server to be installed and runnning.
+Requires Plex Media Server to be runnning. Doesn't matter if it's running on this machine or another.
 
 You need to get your Plex Token. Instructions are here: https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
 
