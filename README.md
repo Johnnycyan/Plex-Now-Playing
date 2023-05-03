@@ -7,8 +7,8 @@ You need to get your Plex Token. Instructions are here: https://support.plex.tv/
 
 You also need the URL of your Plex Server and the name of your Plex Client.
 
-## Plans
-- Create a Node.js frontend UI for use in OBS.
+## UI for Plex-Now-Playing
+I created a simple UI for Plex-Now-Playing. [Available here](https://github.com/Johnnycyan/Plex-Now-Playing-UI)
 
 ## Installing Plex-Now-Playing
 
