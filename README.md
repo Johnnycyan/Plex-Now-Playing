@@ -14,3 +14,7 @@ Installing Plex-Now-Playing
 Running Plex-Now-Playing
 
 `python plexamp.py`
+
+Example of integrating it within OBS:
+
+https://user-images.githubusercontent.com/24556317/235816006-61a5f598-8711-43a2-a3d1-f3ca41bda650.mp4
