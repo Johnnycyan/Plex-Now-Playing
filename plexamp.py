@@ -4,6 +4,7 @@ import requests
 from plexapi.server import PlexServer
 from plexwebsocket import PlexWebsocket, SIGNAL_CONNECTION_STATE
 from plexapi.myplex import MyPlexAccount
+from time import sleep
 
 # Change these variables
 plex_server_url = 'http://localhost:32400' # Change this to your Plex server IP address
@@ -23,6 +24,7 @@ while clientCheck == True: # This is to prevent the script from crashing if the 
     except:
         print("Client not found")
         clientCheck = True
+        sleep(2)
 machineID = client.machineIdentifier
 mydir = directory
 
