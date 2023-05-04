@@ -5,12 +5,26 @@ from plexapi.server import PlexServer
 from plexwebsocket import PlexWebsocket, SIGNAL_CONNECTION_STATE
 from plexapi.myplex import MyPlexAccount
 
-baseurl = 'http://localhost:32400' # Change this to your Plex server IP address
-token = 'xdd' # Change this to your Plex token https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
+# Change these variables
+plex_server_url = 'http://localhost:32400' # Change this to your Plex server IP address
+plex_token = 'xdd' # Change this to your Plex token https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
+client_name = 'My-PC-Example' # Change this to whatever client you want to get the information from
+directory = os.getcwd() # Change this to whatever directory you want the information to be saved to ex: "C:/mydir/" make sure to include the trailing slash
+# End of variables to change
+
+baseurl = plex_server_url
+token = plex_token
 plex = PlexServer(baseurl, token)
-client = plex.client("My-PC-Example") # Change this to whatever client you want to get the information from
+clientCheck = True
+while clientCheck == True: # This is to prevent the script from crashing if the client is not found
+    try:
+        client = plex.client(client_name)
+        clientCheck = False
+    except:
+        print("Client not found")
+        clientCheck = True
 machineID = client.machineIdentifier
-mydir = os.getcwd() # Change this to whatever directory you want the information to be saved to ex: "C:/mydir/" make sure to include the trailing slash
+mydir = directory
 
 def save_album_art(item):
     """
