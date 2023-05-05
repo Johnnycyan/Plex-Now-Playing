@@ -36,10 +36,14 @@ def save_album_art(item):
     if album_art_url is None:
         album_art_url = item.grandparentThumb
     if album_art_url:
+        if "tidal.com" in album_art_url:
+            full_album_art_url = album_art_url
+        else:
+            full_album_art_url = baseurl + album_art_url + f'?X-Plex-Token={token}'
         #print(baseurl + album_art_url)
-        album_art = requests.get(baseurl + album_art_url + f'?X-Plex-Token={token}').content
+        album_art = requests.get(full_album_art_url).content
         with open (f"{mydir}album_art.txt", "w+") as f:
-            f.write(baseurl + album_art_url + f'?X-Plex-Token={token}')
+            f.write(full_album_art_url)
         with open(f"{mydir}album.png", "wb") as f:
             f.write(album_art)
     else:
